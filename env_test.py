@@ -8,6 +8,7 @@ def dump(e):
  
 dump(env)
 
+input('Please press <Enter> to continue ...')
 # modify/create a environment variable
 env['PLAY'] = 'OK'
 env['PLAY'] = 'NO'
