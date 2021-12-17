@@ -1,4 +1,4 @@
-import sys, pygame
+mport sys, pygame
 pygame.init()
 
 size = width, height = 8*320, 8*240
@@ -10,11 +10,14 @@ screen = pygame.display.set_mode(size)
 ball = pygame.image.load("intro_ball.gif")
 ballrect = ball.get_rect()
 
-while 1:
+while True:
+    ballrect = ballrect.move(speed)
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            speed[0] = -speed[0]
+            speed[1] = -speed[1]
 
-    ballrect = ballrect.move(speed)
     if ballrect.left < 0 or ballrect.right > width:
         speed[0] = -speed[0]
     if ballrect.top < 0 or ballrect.bottom > height:
