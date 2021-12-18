@@ -1,4 +1,4 @@
-mport sys, pygame
+import sys, pygame
 pygame.init()
 
 size = width, height = 8*320, 8*240
